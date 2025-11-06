@@ -1,3 +1,4 @@
+cat > Jenkinsfile << 'EOF'
 pipeline {
     agent any
 
@@ -57,10 +58,11 @@ pipeline {
 
     post {
         success {
-            echo 'Deployment completed successfully!'
+            echo '✅ Deployment completed successfully!'
         }
         failure {
-            echo 'Deployment failed. Check logs for details.'
+            echo '❌ Deployment failed. Check logs for details.'
         }
     }
 }
+EOF
